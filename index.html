@@ -1,47 +1,326 @@
-<!-- HERO SECTION W/ STATIC IMAGE -->
+<!-- CABEÇALHO FIXO / STICKY HEADER -->
+<header id="main-header"
+    class="fixed top-0 left-0 w-full z-[900] transition-all duration-300 pt-4 pb-4 md:pt-8 bg-transparent">
+
+    <div class="max-w-7xl mx-auto px-6 flex justify-center md:justify-start md:pl-[25%] lg:pl-[22%]">
+        <nav>
+            <ul id="header-nav-list"
+                class="flex flex-wrap justify-center gap-4 md:gap-8 text-white font-heading font-bold uppercase text-[10px] md:text-xs tracking-wider transition-colors duration-300">
+
+                <li>
+                    <a href="#"
+                       class="hover:text-brand-yellow transition-colors border-b-2 border-transparent hover:border-brand-yellow pb-1">
+                        Início
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#solucoes"
+                       class="hover:text-brand-yellow transition-colors border-b-2 border-transparent hover:border-brand-yellow pb-1">
+                        Soluções
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#produtos"
+                       class="hover:text-brand-yellow transition-colors border-b-2 border-transparent hover:border-brand-yellow pb-1">
+                        Produtos
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://wa.me/554235224313"
+                       class="wa-trigger hover:text-brand-yellow transition-colors border-b-2 border-transparent hover:border-brand-yellow pb-1">
+                        Contato
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<a href="https://wa.me/554235224313"
+   class="wa-trigger fixed bottom-6 right-6 z-[990] flex items-center justify-center w-14 h-14 bg-brand-yellow text-brand-black rounded-full shadow-[0_4px_15px_rgba(255,184,0,0.4)] hover:bg-brand-yellowHover hover:scale-110 transition-all duration-300 group"
+   aria-label="Falar no WhatsApp">
+
+    <span class="absolute inline-flex h-full w-full rounded-full bg-brand-yellow opacity-40 group-hover:animate-ping"></span>
+
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="32"
+         height="32"
+         fill="currentColor"
+         viewBox="0 0 256 256"
+         class="relative z-10">
+
+        <path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23-9.7,14.57a8,8,0,0,0-.34,8.44,56.55,56.55,0,0,0,22.3,22.3,8,8,0,0,0,8.44-.34l14.57-9.7,23,11.48A24,24,0,0,1,152,176ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,212l33.4-11.13a8,8,0,0,1,6.54.66A88,88,0,0,0,216,128Z"></path>
+
+    </svg>
+</a>
+
+
+<!-- HERO / BANNER PRINCIPAL -->
 <section class="relative w-full bg-brand-black flex flex-col items-center">
 
-    <!-- Banner -->
     <div class="w-full">
 
-        <!-- Desktop / Tablet -->
+        <!-- BANNER DESKTOP -->
         <img
-            class="w-full h-auto hidden md:block"
             src="https://cdn.shopify.com/s/files/1/0993/5788/4732/files/bf1f6c1c-9d5f-44c0-b0e3-167366d3687b.png?v=1792157091"
-            alt="SLB Hidromecânica - Soluções para operações pesadas"
+            alt="Banner SLB Hidromecânica Desktop"
+            class="hidden md:block w-full h-auto"
+            loading="eager"
+            fetchpriority="high"
         >
 
-        <!-- Mobile -->
+        <!-- BANNER MOBILE -->
         <img
-            class="w-full h-auto block md:hidden"
             src="https://cdn.shopify.com/s/files/1/0993/5788/4732/files/Solucoes_robustas_para_maquinas_pesadas.png?v=1792157407"
-            alt="SLB Hidromecânica - Soluções robustas para máquinas pesadas"
+            alt="Banner SLB Hidromecânica Mobile"
+            class="block md:hidden w-full h-auto"
+            loading="eager"
+            fetchpriority="high"
         >
 
     </div>
 
-    <!-- Action Buttons -->
+
+    <!-- BOTÃO ABAIXO DO BANNER -->
     <div class="w-full max-w-7xl mx-auto px-6 pb-6 pt-6 flex justify-center">
-        <a
-            href="https://wa.me/554235224313"
-            class="wa-trigger clip-diagonal-btn bg-brand-yellow hover:bg-brand-yellowHover text-brand-black font-bold text-lg px-8 py-4 text-center transition-all flex justify-center items-center gap-3 group shadow-[0_0_15px_rgba(255,184,0,0.2)]"
-        >
+
+        <a href="https://wa.me/554235224313"
+           class="wa-trigger clip-diagonal-btn bg-brand-yellow hover:bg-brand-yellowHover text-brand-black font-bold text-lg px-8 py-4 text-center transition-all flex justify-center items-center gap-3 group shadow-[0_0_15px_rgba(255,184,0,0.2)]">
+
             Falar com especialista
 
-            <svg
-                class="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                ></path>
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                 fill="none"
+                 stroke="currentColor"
+                 viewBox="0 0 24 24">
+
+                <path stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3">
+                </path>
+
             </svg>
+
         </a>
+
     </div>
 
 </section>
+
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.addEventListener("DOMContentLoaded", () => {
+
+        /* ==============================
+           STICKY HEADER
+        ============================== */
+
+        const mainHeader = document.getElementById('main-header');
+        const headerNavList = document.getElementById('header-nav-list');
+
+        const updateHeader = () => {
+
+            if (window.scrollY > 10) {
+
+                /* HEADER DEPOIS DE ROLAR */
+                mainHeader.classList.add(
+                    'bg-white/95',
+                    'backdrop-blur-sm',
+                    'shadow-sm',
+                    'py-4'
+                );
+
+                mainHeader.classList.remove(
+                    'bg-transparent',
+                    'pt-4',
+                    'md:pt-8',
+                    'pb-4'
+                );
+
+                if (headerNavList) {
+                    headerNavList.classList.remove('text-white');
+                    headerNavList.classList.add('text-brand-black');
+                }
+
+            } else {
+
+                /* HEADER NO TOPO DO BANNER */
+                mainHeader.classList.remove(
+                    'bg-white/95',
+                    'backdrop-blur-sm',
+                    'shadow-sm',
+                    'py-4'
+                );
+
+                mainHeader.classList.add(
+                    'bg-transparent',
+                    'pt-4',
+                    'md:pt-8',
+                    'pb-4'
+                );
+
+                if (headerNavList) {
+                    headerNavList.classList.remove('text-brand-black');
+                    headerNavList.classList.add('text-white');
+                }
+
+            }
+        };
+
+
+        updateHeader();
+
+        window.addEventListener(
+            'scroll',
+            updateHeader,
+            { passive: true }
+        );
+
+
+        /* ==============================
+           ANIMAÇÕES GSAP
+        ============================== */
+
+        gsap.from(".group", {
+
+            scrollTrigger: {
+                trigger: ".grid-cols-1.md\\:grid-cols-3",
+                start: "top 80%",
+            },
+
+            y: 30,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.1,
+            ease: "power2.out"
+        });
+
+
+        /* ==============================
+           MODAL WHATSAPP
+        ============================== */
+
+        const waTriggers =
+            document.querySelectorAll(
+                'a[href*="wa.me"]:not(.wa-route-btn)'
+            );
+
+        const waModal =
+            document.getElementById('wa-modal');
+
+        const waModalContent =
+            document.getElementById('wa-modal-content');
+
+        const waCloseBtn =
+            document.getElementById('wa-close');
+
+        const waRouteBtns =
+            document.querySelectorAll('.wa-route-btn');
+
+
+        const openModal = (e) => {
+
+            e.preventDefault();
+
+            if (!waModal || !waModalContent)
+                return;
+
+            waModal.classList.remove('hidden');
+
+            setTimeout(() => {
+
+                waModal.classList.remove('opacity-0');
+
+                waModalContent.classList.remove(
+                    'scale-95'
+                );
+
+                waModalContent.classList.add(
+                    'scale-100'
+                );
+
+            }, 10);
+
+        };
+
+
+        const closeModal = () => {
+
+            if (!waModal || !waModalContent)
+                return;
+
+            waModal.classList.add('opacity-0');
+
+            waModalContent.classList.remove(
+                'scale-100'
+            );
+
+            waModalContent.classList.add(
+                'scale-95'
+            );
+
+            setTimeout(() => {
+
+                waModal.classList.add('hidden');
+
+            }, 300);
+
+        };
+
+
+        waTriggers.forEach(trigger => {
+
+            trigger.addEventListener(
+                'click',
+                openModal
+            );
+
+        });
+
+
+        if (waCloseBtn) {
+
+            waCloseBtn.addEventListener(
+                'click',
+                closeModal
+            );
+
+        }
+
+
+        if (waModal) {
+
+            waModal.addEventListener(
+                'click',
+                (e) => {
+
+                    if (e.target === waModal) {
+                        closeModal();
+                    }
+
+                }
+            );
+
+        }
+
+
+        waRouteBtns.forEach(btn => {
+
+            btn.addEventListener(
+                'click',
+                closeModal
+            );
+
+        });
+
+    });
+</script>
