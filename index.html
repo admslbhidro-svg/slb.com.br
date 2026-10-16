@@ -239,10 +239,38 @@
         @keyframes slb-brand-appear { 0%,35% { opacity: 0; transform: translateY(15px); } 72%,100% { opacity: 1; transform: translateY(0); } }
         @keyframes slb-progress-run { from { transform: scaleX(0); } to { transform: scaleX(1); } }
         @media (max-width: 600px) {
-            #slb-intro .slb-3d-scene { width: 100vw; height: min(72svh,650px); min-height: 360px; }
-            #slb-intro .slb-3d-stage { inset: 2% -10% 28%; }
-            #slb-intro .slb-3d-machine { width: 100%; left: 0; }
-            #slb-intro .slb-3d-brand { bottom: 0; }
+            /* Ajuste exclusivo para abertura em telas pequenas */
+            #slb-intro .slb-3d-scene {
+                width: 100%;
+                max-width: 100vw;
+                height: min(66svh, 570px);
+                min-height: 310px;
+            }
+            #slb-intro .slb-3d-stage {
+                inset: 0 3% 30%;
+            }
+            #slb-intro .slb-3d-machine {
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                object-fit: contain;
+                transform-origin: center center;
+            }
+            #slb-intro .slb-3d-brand {
+                bottom: 6%;
+                padding: 0 12px;
+            }
+            #slb-intro .slb-3d-brand strong {
+                font-size: clamp(28px, 10vw, 42px);
+            }
+            #slb-intro .slb-3d-brand span {
+                font-size: clamp(9px, 2.5vw, 12px);
+                letter-spacing: .18em;
+            }
+            #slb-intro .slb-3d-progress {
+                bottom: -18px;
+            }
         }
         @media (prefers-reduced-motion: reduce) {
             #slb-intro::before, #slb-intro .slb-3d-stage, #slb-intro .slb-3d-orbit, #slb-intro .slb-3d-machine, #slb-intro .slb-3d-brand { animation: none; }
