@@ -1170,5 +1170,49 @@
             });
         });
     </script>
+    
+<!-- SLB - ENCERRAMENTO DA ABERTURA -->
+<script>
+(function () {
+    function iniciarSaidaSLB() {
+        const intro = document.getElementById("slb-intro");
+
+        if (!intro) return;
+
+        let encerrado = false;
+
+        function encerrar() {
+            if (encerrado) return;
+            encerrado = true;
+
+            intro.style.pointerEvents = "none";
+            intro.style.opacity = "0";
+            intro.style.visibility = "hidden";
+
+            setTimeout(function () {
+                intro.remove();
+            }, 800);
+        }
+
+        // Encerramento automático após 3 segundos
+        setTimeout(encerrar, 3000);
+
+        // Segurança: nunca deixar a abertura presa
+        setTimeout(encerrar, 5000);
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            iniciarSaidaSLB,
+            { once: true }
+        );
+    } else {
+        iniciarSaidaSLB();
+    }
+})();
+</script>
+<!-- FIM DO ENCERRAMENTO -->
+
 </body>
 </html>
