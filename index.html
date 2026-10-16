@@ -1,326 +1,1015 @@
-<!-- CABEÇALHO FIXO / STICKY HEADER -->
-<header id="main-header"
-    class="fixed top-0 left-0 w-full z-[900] transition-all duration-300 pt-4 pb-4 md:pt-8 bg-transparent">
-
-    <div class="max-w-7xl mx-auto px-6 flex justify-center md:justify-start md:pl-[25%] lg:pl-[22%]">
-        <nav>
-            <ul id="header-nav-list"
-                class="flex flex-wrap justify-center gap-4 md:gap-8 text-white font-heading font-bold uppercase text-[10px] md:text-xs tracking-wider transition-colors duration-300">
-
-                <li>
-                    <a href="#"
-                       class="hover:text-brand-yellow transition-colors border-b-2 border-transparent hover:border-brand-yellow pb-1">
-                        Início
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#solucoes"
-                       class="hover:text-brand-yellow transition-colors border-b-2 border-transparent hover:border-brand-yellow pb-1">
-                        Soluções
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#produtos"
-                       class="hover:text-brand-yellow transition-colors border-b-2 border-transparent hover:border-brand-yellow pb-1">
-                        Produtos
-                    </a>
-                </li>
-
-                <li>
-                    <a href="https://wa.me/554235224313"
-                       class="wa-trigger hover:text-brand-yellow transition-colors border-b-2 border-transparent hover:border-brand-yellow pb-1">
-                        Contato
-                    </a>
-                </li>
-
-            </ul>
-        </nav>
-    </div>
-</header>
-
-
-<!-- BOTÃO FLUTUANTE WHATSAPP -->
-<a href="https://wa.me/554235224313"
-   class="wa-trigger fixed bottom-6 right-6 z-[990] flex items-center justify-center w-14 h-14 bg-brand-yellow text-brand-black rounded-full shadow-[0_4px_15px_rgba(255,184,0,0.4)] hover:bg-brand-yellowHover hover:scale-110 transition-all duration-300 group"
-   aria-label="Falar no WhatsApp">
-
-    <span class="absolute inline-flex h-full w-full rounded-full bg-brand-yellow opacity-40 group-hover:animate-ping"></span>
-
-    <svg xmlns="http://www.w3.org/2000/svg"
-         width="32"
-         height="32"
-         fill="currentColor"
-         viewBox="0 0 256 256"
-         class="relative z-10">
-
-        <path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23-9.7,14.57a8,8,0,0,0-.34,8.44,56.55,56.55,0,0,0,22.3,22.3,8,8,0,0,0,8.44-.34l14.57-9.7,23,11.48A24,24,0,0,1,152,176ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,212l33.4-11.13a8,8,0,0,1,6.54.66A88,88,0,0,0,216,128Z"></path>
-
-    </svg>
-</a>
-
-
-<!-- HERO / BANNER PRINCIPAL -->
-<section class="relative w-full bg-brand-black flex flex-col items-center">
-
-    <div class="w-full">
-
-        <!-- BANNER DESKTOP -->
-        <img
-            src="https://cdn.shopify.com/s/files/1/0993/5788/4732/files/bf1f6c1c-9d5f-44c0-b0e3-167366d3687b.png?v=1792157091"
-            alt="Banner SLB Hidromecânica Desktop"
-            class="hidden md:block w-full h-auto"
-            loading="eager"
-            fetchpriority="high"
-        >
-
-        <!-- BANNER MOBILE -->
-        <img
-            src="https://cdn.shopify.com/s/files/1/0993/5788/4732/files/Solucoes_robustas_para_maquinas_pesadas.png?v=1792157407"
-            alt="Banner SLB Hidromecânica Mobile"
-            class="block md:hidden w-full h-auto"
-            loading="eager"
-            fetchpriority="high"
-        >
-
-    </div>
-
-
-    <!-- BOTÃO ABAIXO DO BANNER -->
-    <div class="w-full max-w-7xl mx-auto px-6 pb-6 pt-6 flex justify-center">
-
-        <a href="https://wa.me/554235224313"
-           class="wa-trigger clip-diagonal-btn bg-brand-yellow hover:bg-brand-yellowHover text-brand-black font-bold text-lg px-8 py-4 text-center transition-all flex justify-center items-center gap-3 group shadow-[0_0_15px_rgba(255,184,0,0.2)]">
-
-            Falar com especialista
-
-            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform"
-                 fill="none"
-                 stroke="currentColor"
-                 viewBox="0 0 24 24">
-
-                <path stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M17 8l4 4m0 0l-4 4m4-4H3">
-                </path>
-
-            </svg>
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    document.addEventListener("DOMContentLoaded", () => {
-
-        /* ==============================
-           STICKY HEADER
-        ============================== */
-
-        const mainHeader = document.getElementById('main-header');
-        const headerNavList = document.getElementById('header-nav-list');
-
-        const updateHeader = () => {
-
-            if (window.scrollY > 10) {
-
-                /* HEADER DEPOIS DE ROLAR */
-                mainHeader.classList.add(
-                    'bg-white/95',
-                    'backdrop-blur-sm',
-                    'shadow-sm',
-                    'py-4'
-                );
-
-                mainHeader.classList.remove(
-                    'bg-transparent',
-                    'pt-4',
-                    'md:pt-8',
-                    'pb-4'
-                );
-
-                if (headerNavList) {
-                    headerNavList.classList.remove('text-white');
-                    headerNavList.classList.add('text-brand-black');
-                }
-
-            } else {
-
-                /* HEADER NO TOPO DO BANNER */
-                mainHeader.classList.remove(
-                    'bg-white/95',
-                    'backdrop-blur-sm',
-                    'shadow-sm',
-                    'py-4'
-                );
-
-                mainHeader.classList.add(
-                    'bg-transparent',
-                    'pt-4',
-                    'md:pt-8',
-                    'pb-4'
-                );
-
-                if (headerNavList) {
-                    headerNavList.classList.remove('text-brand-black');
-                    headerNavList.classList.add('text-white');
-                }
-
-            }
-        };
-
-
-        updateHeader();
-
-        window.addEventListener(
-            'scroll',
-            updateHeader,
-            { passive: true }
-        );
-
-
-        /* ==============================
-           ANIMAÇÕES GSAP
-        ============================== */
-
-        gsap.from(".group", {
-
-            scrollTrigger: {
-                trigger: ".grid-cols-1.md\\:grid-cols-3",
-                start: "top 80%",
-            },
-
-            y: 30,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.1,
-            ease: "power2.out"
-        });
-
-
-        /* ==============================
-           MODAL WHATSAPP
-        ============================== */
-
-        const waTriggers =
-            document.querySelectorAll(
-                'a[href*="wa.me"]:not(.wa-route-btn)'
-            );
-
-        const waModal =
-            document.getElementById('wa-modal');
-
-        const waModalContent =
-            document.getElementById('wa-modal-content');
-
-        const waCloseBtn =
-            document.getElementById('wa-close');
-
-        const waRouteBtns =
-            document.querySelectorAll('.wa-route-btn');
-
-
-        const openModal = (e) => {
-
-            e.preventDefault();
-
-            if (!waModal || !waModalContent)
-                return;
-
-            waModal.classList.remove('hidden');
-
-            setTimeout(() => {
-
-                waModal.classList.remove('opacity-0');
-
-                waModalContent.classList.remove(
-                    'scale-95'
-                );
-
-                waModalContent.classList.add(
-                    'scale-100'
-                );
-
-            }, 10);
-
-        };
-
-
-        const closeModal = () => {
-
-            if (!waModal || !waModalContent)
-                return;
-
-            waModal.classList.add('opacity-0');
-
-            waModalContent.classList.remove(
-                'scale-100'
-            );
-
-            waModalContent.classList.add(
-                'scale-95'
-            );
-
-            setTimeout(() => {
-
-                waModal.classList.add('hidden');
-
-            }, 300);
-
-        };
-
-
-        waTriggers.forEach(trigger => {
-
-            trigger.addEventListener(
-                'click',
-                openModal
-            );
-
-        });
-
-
-        if (waCloseBtn) {
-
-            waCloseBtn.addEventListener(
-                'click',
-                closeModal
-            );
-
-        }
-
-
-        if (waModal) {
-
-            waModal.addEventListener(
-                'click',
-                (e) => {
-
-                    if (e.target === waModal) {
-                        closeModal();
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLB Hidromecânica | Soluções para Operações Pesadas</title>
+    <meta name="description" content="Soluções hidráulicas confiáveis, peças, manutenção e suporte técnico para guindastes, munck, caminhões e operações pesadas.">
+   
+    <!-- Google Fonts: Montserrat (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800;900&display=swap" rel="stylesheet">
+   
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#0A0A0A',      // Deep industrial background
+                            graphite: '#161616',   // Cards and sections
+                            gray: '#262626',       // Borders and dividers
+                            metallic: '#8C8C8C',   // Subtle text and icons
+                            yellow: '#FFB800',     // Warning/Industrial primary
+                            yellowHover: '#E6A600',
+                            blue: '#0066FF',       // Minimal technical accent
+                            white: '#F4F4F5'       // Primary text
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm39 39V1H1v38h38z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+                        'metal-texture': "radial-gradient(circle at 50% 50%, #161616 0%, #0a0a0a 100%)",
                     }
-
                 }
-            );
+            }
+        }
+    </script>
 
+    <style>
+        /* Base Styles & Scrollbar */
+        body {
+            background-color: #0A0A0A;
+            color: #F4F4F5;
+            -webkit-font-smoothing: antialiased;
+        }
+       
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0A0A;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 0px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FFB800;
         }
 
+        /* Industrial UI Elements */
+        .clip-diagonal {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+        }
+       
+        .clip-diagonal-btn {
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+        }
 
-        waRouteBtns.forEach(btn => {
+        .tech-border {
+            position: relative;
+            border: 1px solid #262626;
+        }
+       
+        .tech-border::before, .tech-border::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border: 1px solid #FFB800;
+            transition: all 0.3s ease;
+        }
+       
+        .tech-border::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+        .tech-border::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
 
-            btn.addEventListener(
-                'click',
-                closeModal
-            );
+        .tech-border:hover::before, .tech-border:hover::after {
+            width: 16px;
+            height: 16px;
+        }
 
+        /* Borda Tecnológica para Fundo Claro */
+        .tech-border-light {
+            position: relative;
+            border: 1px solid #E5E7EB; /* gray-200 */
+        }
+       
+        .tech-border-light::before, .tech-border-light::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border: 1px solid #FFB800;
+            transition: all 0.3s ease;
+        }
+       
+        .tech-border-light::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+        .tech-border-light::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+        .tech-border-light:hover::before, .tech-border-light:hover::after {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Video/Image Container specific styles */
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            background-color: #0A0A0A;
+        }
+
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(10,10,10,0.9) 0%, rgba(10,10,10,0.4) 50%, rgba(10,10,10,0.1) 100%);
+            z-index: 10; /* Overlay fica por cima das imagens */
+        }
+
+        @media (max-width: 768px) {
+            .video-overlay {
+                background: linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.8) 100%);
+            }
+        }
+
+        /* Timeline Styles */
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #262626;
+        }
+       
+        .timeline-dot {
+            position: absolute;
+            left: -43px; /* Ajustado para alinhar perfeitamente com a linha */
+            top: -2px; /* Alinha o centro da bolinha com o título */
+            width: 24px;
+            height: 24px;
+            background: #0A0A0A;
+            border: 2px solid #FFB800;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            color: #FFB800;
+        }
+
+        /* FAQ details styling */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+
+        /* Marquee Animation (Looping infinito) */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 40s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="bg-grid-pattern antialiased selection:bg-brand-yellow selection:text-brand-black relative">
+
+    <!-- CABEÇALHO FIXO / STICKY HEADER -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-[900] transition-all duration-300 pt-4 pb-4 md:pt-8 bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 flex justify-center md:justify-start md:pl-[25%] lg:pl-[22%]">
+            <nav>
+                <ul class="flex flex-wrap justify-center gap-4 md:gap-8 text-brand-black font-heading font-bold uppercase text-[10px] md:text-xs tracking-wider">
+                    <li><a href="#" class="hover:text-brand-yellow transition-colors border-b-2 border-transparent hover:border-brand-yellow pb-1">Início</a></li>
+                    <li><a href="#solucoes" class="hover:text-brand-yellow transition-colors border-b-2 border-transparent hover:border-brand-yellow pb-1">Soluções</a></li>
+                    <li><a href="#produtos" class="hover:text-brand-yellow transition-colors border-b-2 border-transparent hover:border-brand-yellow pb-1">Produtos</a></li>
+                    <li><a href="https://wa.me/554235224313" class="wa-trigger hover:text-brand-yellow transition-colors border-b-2 border-transparent hover:border-brand-yellow pb-1">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/554235224313" class="wa-trigger fixed bottom-6 right-6 z-[990] flex items-center justify-center w-14 h-14 bg-brand-yellow text-brand-black rounded-full shadow-[0_4px_15px_rgba(255,184,0,0.4)] hover:bg-brand-yellowHover hover:scale-110 transition-all duration-300 group" aria-label="Falar no WhatsApp">
+        <!-- Efeito de pulso atrás do botão para chamar atenção -->
+        <span class="absolute inline-flex h-full w-full rounded-full bg-brand-yellow opacity-40 group-hover:animate-ping"></span>
+       
+        <!-- Ícone do WhatsApp -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256" class="relative z-10">
+            <path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23-9.7,14.57a8,8,0,0,0-.34,8.44,56.55,56.55,0,0,0,22.3,22.3,8,8,0,0,0,8.44-.34l14.57-9.7,23,11.48A24,24,0,0,1,152,176ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,212l33.4-11.13a8,8,0,0,1,6.54.66A88,88,0,0,0,216,128Z"></path>
+        </svg>
+    </a>
+
+    <!-- HERO SECTION W/ STATIC IMAGE -->
+    <section class="relative w-full bg-brand-black flex flex-col items-center">
+        <!-- Banner Image Original Size -->
+        <div class="w-full">
+            <!-- Imagem para Desktop (oculta no celular) -->
+            <img class="w-full h-auto hidden md:block" src="https://cdn.shopify.com/s/files/1/0732/6734/7567/files/3s.png?v=1785422790" alt="Banner SLB Hidromecânica Desktop">
+            
+            <!-- Imagem para Mobile (visível apenas no celular) -->
+            <img class="w-full h-auto block md:hidden" src="https://chatgpt.com/backend-api/estuary/content?id=file_000000002d74820e987cad2b0f428184&ts=496083&p=fs&cid=1&sig=ff435e792c9ae21c3ee63a0237ebae1e8d367518e934a04cb8037b82ba158442&v=0" alt="Banner SLB Hidromecânica Mobile" onerror="this.onerror=null; this.src='https://placehold.co/600x900/161616/404040?text=Imagem+Mobile+Indispon%C3%ADvel'">
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="w-full max-w-7xl mx-auto px-6 pb-6 pt-6 flex justify-center">
+            <a href="https://wa.me/554235224313" class="wa-trigger clip-diagonal-btn bg-brand-yellow hover:bg-brand-yellowHover text-brand-black font-bold text-lg px-8 py-4 text-center transition-all flex justify-center items-center gap-3 group shadow-[0_0_15px_rgba(255,184,0,0.2)]">
+                Falar com especialista
+                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 1: DOR -->
+    <section class="pt-10 pb-24 bg-brand-black border-t border-brand-gray relative">
+        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: repeating-linear-gradient(45deg, #FFB800 0, #FFB800 1px, transparent 1px, transparent 50px);"></div>
+       
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="mb-16 md:w-2/3">
+                <h2 class="font-heading font-black text-3xl md:text-5xl uppercase tracking-tight mb-6">
+                    Quando a hidráulica falha,<br><span class="text-brand-metallic">a operação inteira sente.</span>
+                </h2>
+                <p class="text-gray-400 text-lg">
+                    Um equipamento parado significa atraso, custo, retrabalho e risco. A SLB atua para entregar soluções hidráulicas confiáveis, com peças, manutenção e orientação técnica para operações pesadas.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="bg-brand-graphite p-6 border border-brand-gray hover:border-red-900/50 transition-colors group">
+                    <div class="w-10 h-10 mb-4 text-brand-metallic group-hover:text-red-500 transition-colors">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">Equipamento parado</h3>
+                    <p class="text-sm text-gray-500">Horas ociosas que geram prejuízo direto na obra ou transporte.</p>
+                </div>
+               
+                <div class="bg-brand-graphite p-6 border border-brand-gray hover:border-red-900/50 transition-colors group">
+                    <div class="w-10 h-10 mb-4 text-brand-metallic group-hover:text-red-500 transition-colors">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">Perda de produtividade</h3>
+                    <p class="text-sm text-gray-500">Cronogramas atrasados e metas não atingidas por falha técnica.</p>
+                </div>
+
+                <div class="bg-brand-graphite p-6 border border-brand-gray hover:border-red-900/50 transition-colors group">
+                    <div class="w-10 h-10 mb-4 text-brand-metallic group-hover:text-red-500 transition-colors">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">Risco operacional</h3>
+                    <p class="text-sm text-gray-500">Componentes falhos que colocam a equipe e a carga em perigo.</p>
+                </div>
+
+                <div class="bg-brand-graphite p-6 border border-brand-gray hover:border-red-900/50 transition-colors group">
+                    <div class="w-10 h-10 mb-4 text-brand-metallic group-hover:text-red-500 transition-colors">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">Peça errada</h3>
+                    <p class="text-sm text-gray-500">Compra de componentes incompatíveis que geram retrabalho.</p>
+                </div>
+
+                <div class="bg-brand-graphite p-6 border border-brand-gray hover:border-red-900/50 transition-colors group">
+                    <div class="w-10 h-10 mb-4 text-brand-metallic group-hover:text-red-500 transition-colors">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-white mb-2">Falta de suporte</h3>
+                    <p class="text-sm text-gray-500">Fornecedores que vendem, mas não orientam a aplicação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 2: SOLUÇÕES -->
+    <section id="solucoes" class="py-24 bg-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-yellow/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-brand-yellow text-sm font-bold tracking-widest uppercase block mb-3">O que fazemos</span>
+                <h2 class="font-heading font-black text-3xl md:text-5xl uppercase tracking-tight text-brand-black">
+                    Da peça ao funcionamento:<br>a SLB entrega solução.
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Soluções Cards -->
+                <div class="tech-border-light bg-gray-50 p-8 group hover:bg-white transition-colors">
+                    <div class="w-12 h-12 bg-gray-200 flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
+                        <svg class="w-6 h-6 text-brand-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl uppercase mb-3 text-brand-black">Bombas Hidráulicas</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Engrenagem, pistão ou palheta. Fornecemos o coração do seu sistema com as especificações exatas de pressão e vazão.</p>
+                </div>
+
+                <div class="tech-border-light bg-gray-50 p-8 group hover:bg-white transition-colors">
+                    <div class="w-12 h-12 bg-gray-200 flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
+                        <svg class="w-6 h-6 text-brand-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl uppercase mb-3 text-brand-black">Comandos Hidráulicos</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Controle preciso e seguro para todos os movimentos. Comandos monobloco ou modulados para diversas aplicações.</p>
+                </div>
+
+                <div class="tech-border-light bg-gray-50 p-8 group hover:bg-white transition-colors">
+                    <div class="w-12 h-12 bg-gray-200 flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
+                        <svg class="w-6 h-6 text-brand-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl uppercase mb-3 text-brand-black">Guindastes e Munck</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Especialistas na linha de elevação e movimentação de carga. Peças específicas para garantir a capacidade nominal.</p>
+                </div>
+
+                <div class="tech-border-light bg-gray-50 p-8 group hover:bg-white transition-colors">
+                    <div class="w-12 h-12 bg-gray-200 flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
+                        <svg class="w-6 h-6 text-brand-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl uppercase mb-3 text-brand-black">Manutenção Hidráulica</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Diagnóstico, reparo e testes de componentes. Recuperamos a eficiência original do seu equipamento.</p>
+                </div>
+
+                <div class="tech-border-light bg-gray-50 p-8 group hover:bg-white transition-colors">
+                    <div class="w-12 h-12 bg-gray-200 flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
+                        <svg class="w-6 h-6 text-brand-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl uppercase mb-3 text-brand-black">Peças e Componentes</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Amplo estoque de reparos, vedações, filtros, e acessórios. O que você precisa, com agilidade.</p>
+                </div>
+
+                <div class="tech-border-light bg-gray-50 p-8 group hover:bg-white transition-colors">
+                    <div class="w-12 h-12 bg-gray-200 flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
+                        <svg class="w-6 h-6 text-brand-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl uppercase mb-3 text-brand-black">Suporte Técnico</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Orientação especializada na escolha e instalação. Não vendemos apenas peças, entregamos a solução correta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 3: PRODUTOS -->
+    <section id="produtos" class="py-24 bg-brand-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-brand-gray pb-6 gap-6">
+                <div>
+                    <h2 class="font-heading font-black text-3xl md:text-4xl uppercase tracking-tight">
+                        Componentes Hidráulicos<br><span class="text-brand-metallic">para aplicações exigentes.</span>
+                    </h2>
+                </div>
+                <a href="https://wa.me/554235224313" class="wa-trigger text-brand-yellow font-bold text-sm uppercase tracking-wider hover:text-white transition-colors flex items-center gap-2">
+                    Solicitar Orçamento <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Produto 1 -->
+                <div class="group">
+                    <div class="aspect-[4/3] bg-brand-graphite overflow-hidden mb-4 relative clip-diagonal">
+                        <img src="https://cdn.shopify.com/s/files/1/0993/5788/4732/files/Imagem_do_ChatGPT_16_de_out._de_2026_09_20_25.png?v=1792153239" onerror="this.onerror=null; this.src='https://placehold.co/800x600/161616/404040?text=Imagem+Indispon%C3%ADvel'" alt="Bombas Hidráulicas" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100">
+                        <div class="absolute inset-0 border border-brand-gray/50 pointer-events-none"></div>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg uppercase">Bombas Hidráulicas</h3>
+                    <p class="text-sm text-gray-500 mb-4 h-10">Alta performance para geração de fluxo contínuo.</p>
+                    <a href="https://wa.me/554235224313" class="wa-trigger text-xs font-bold text-brand-white border-b border-brand-yellow pb-1 hover:text-brand-yellow transition-colors inline-block">Consultar disponibilidade</a>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="group">
+                    <div class="aspect-[4/3] bg-brand-graphite overflow-hidden mb-4 relative clip-diagonal">
+                        <img src="https://cdn.shopify.com/s/files/1/0993/5788/4732/files/Imagem_do_ChatGPT_16_de_out._de_2026_09_24_10.png?v=1792153474" onerror="this.onerror=null; this.src='https://placehold.co/800x600/161616/404040?text=Imagem+Indispon%C3%ADvel'" alt="Válvulas" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100">
+                        <div class="absolute inset-0 border border-brand-gray/50 pointer-events-none"></div>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg uppercase">Válvulas</h3>
+                    <p class="text-sm text-gray-500 mb-4 h-10">Controle direcional, pressão e fluxo precisos.</p>
+                    <a href="https://wa.me/554235224313" class="wa-trigger text-xs font-bold text-brand-white border-b border-brand-yellow pb-1 hover:text-brand-yellow transition-colors inline-block">Consultar disponibilidade</a>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="group">
+                    <div class="aspect-[4/3] bg-brand-graphite overflow-hidden mb-4 relative clip-diagonal">
+                        <img src="https://cdn.shopify.com/s/files/1/0993/5788/4732/files/Imagem_do_ChatGPT_16_de_out._de_2026_09_39_01.png?v=1792154356" onerror="this.onerror=null; this.src='https://placehold.co/800x600/161616/404040?text=Imagem+Indispon%C3%ADvel'" alt="Comandos" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100">
+                        <div class="absolute inset-0 border border-brand-gray/50 pointer-events-none"></div>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg uppercase">Comandos</h3>
+                    <p class="text-sm text-gray-500 mb-4 h-10">Interface de operação robusta para maquinário pesado.</p>
+                    <a href="https://wa.me/554235224313" class="wa-trigger text-xs font-bold text-brand-white border-b border-brand-yellow pb-1 hover:text-brand-yellow transition-colors inline-block">Consultar disponibilidade</a>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="group">
+                    <div class="aspect-[4/3] bg-brand-graphite overflow-hidden mb-4 relative clip-diagonal">
+                        <img src="https://cdn.shopify.com/s/files/1/0993/5788/4732/files/Cilindro_hidraulico_HYVA_diagonal.png?v=1792152337" onerror="this.onerror=null; this.src='https://placehold.co/800x600/161616/404040?text=Imagem+Indispon%C3%ADvel'" alt="Cilindros" class="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100">
+                        <div class="absolute inset-0 border border-brand-gray/50 pointer-events-none"></div>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg uppercase">Cilindros</h3>
+                    <p class="text-sm text-gray-500 mb-4 h-10">Atuadores lineares de força extrema para içamento e basculamento.</p>
+                    <a href="https://wa.me/554235224313" class="wa-trigger text-xs font-bold text-brand-white border-b border-brand-yellow pb-1 hover:text-brand-yellow transition-colors inline-block">Consultar disponibilidade</a>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="group">
+                    <div class="aspect-[4/3] bg-brand-graphite overflow-hidden mb-4 relative clip-diagonal">
+                        <img src="https://cdn.shopify.com/s/files/1/0993/5788/4732/files/Reservatorio_Hidraulico_HYVA_Preto.png?v=1792153129" onerror="this.onerror=null; this.src='https://placehold.co/800x600/161616/404040?text=Imagem+Indispon%C3%ADvel'" alt="Conexões" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100">
+                        <div class="absolute inset-0 border border-brand-gray/50 pointer-events-none"></div>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg uppercase">Conexões e Mangueiras</h3>
+                    <p class="text-sm text-gray-500 mb-4 h-10">Terminais, niples e condução segura de fluidos de alta pressão.</p>
+                    <a href="https://wa.me/554235224313" class="wa-trigger text-xs font-bold text-brand-white border-b border-brand-yellow pb-1 hover:text-brand-yellow transition-colors inline-block">Consultar disponibilidade</a>
+                </div>
+
+                <!-- Produto 6 -->
+                <div class="group">
+                    <div class="aspect-[4/3] bg-brand-graphite overflow-hidden mb-4 relative clip-diagonal">
+                        <img src="https://cdn.shopify.com/s/files/1/0993/5788/4732/files/Guindaste_Hidraulico_HYVA_HBR350e4.png?v=1792154914" onerror="this.onerror=null; this.src='https://placehold.co/800x600/161616/404040?text=Imagem+Indispon%C3%ADvel'" alt="Componentes Guindaste" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100">
+                        <div class="absolute inset-0 border border-brand-gray/50 pointer-events-none"></div>
+                    </div>
+                    <h3 class="font-heading font-bold text-lg uppercase">Componentes para Guindastes</h3>
+                    <p class="text-sm text-gray-500 mb-4 h-10">Peças específicas para linha Munck e gruas rodoviárias.</p>
+                    <a href="https://wa.me/554235224313" class="wa-trigger text-xs font-bold text-brand-white border-b border-brand-yellow pb-1 hover:text-brand-yellow transition-colors inline-block">Consultar disponibilidade</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 4: DIFERENCIAIS + SEÇÃO 5: COMO TRABALHAMOS -->
+    <section class="py-24 bg-white border-y border-gray-200 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+               
+                <!-- Diferenciais -->
+                <div>
+                    <h2 class="font-heading font-black text-3xl md:text-4xl uppercase tracking-tight mb-8 text-brand-black">
+                        Mais do que vender peças.<br><span class="text-brand-yellow">Entregar confiança.</span>
+                    </h2>
+                   
+                    <ul class="space-y-6">
+                        <li class="flex gap-4 items-start">
+                            <div class="mt-1 w-6 h-6 rounded bg-gray-100 flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-black">Atendimento Técnico</h4>
+                                <p class="text-sm text-gray-600 mt-1">Falamos a mesma língua que o mecânico e o operador.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="mt-1 w-6 h-6 rounded bg-gray-100 flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-black">Análise da Aplicação</h4>
+                                <p class="text-sm text-gray-600 mt-1">Garantimos que o componente seja o correto para o esforço exigido.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="mt-1 w-6 h-6 rounded bg-gray-100 flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-black">Peças para Operações Pesadas</h4>
+                                <p class="text-sm text-gray-600 mt-1">Qualidade robusta exigida em construções, agro e portos.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="mt-1 w-6 h-6 rounded bg-gray-100 flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-black">Agilidade no Atendimento</h4>
+                                <p class="text-sm text-gray-600 mt-1">Orçamentos rápidos porque máquina parada é prejuízo.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Como Trabalhamos (Timeline) -->
+                <div id="como-trabalhamos" class="bg-brand-black p-8 md:p-10 tech-border shadow-2xl">
+                    <h3 class="font-heading font-black text-2xl uppercase tracking-tight mb-8 border-b border-brand-gray pb-4 text-white">Um processo simples para <span class="text-brand-metallic">resolver rápido.</span></h3>
+                   
+                    <div class="relative pl-14 space-y-8"> <!-- Alterado para pl-14 para afastar o texto -->
+                        <div class="timeline-line"></div>
+                       
+                        <div class="relative">
+                            <div class="timeline-dot">1</div>
+                            <h4 class="font-bold text-white text-lg">Você envia sua necessidade</h4>
+                            <p class="text-sm text-gray-500 mt-1">Foto da peça, código ou relato do problema via WhatsApp.</p>
+                        </div>
+                       
+                        <div class="relative">
+                            <div class="timeline-dot">2</div>
+                            <h4 class="font-bold text-white text-lg">Entendemos a aplicação</h4>
+                            <p class="text-sm text-gray-500 mt-1">Nossa equipe técnica analisa o modelo do equipamento e a função do componente.</p>
+                        </div>
+                       
+                        <div class="relative">
+                            <div class="timeline-dot">3</div>
+                            <h4 class="font-bold text-white text-lg">Indicamos a solução correta</h4>
+                            <p class="text-sm text-gray-500 mt-1">Definimos a peça exata para substituir sem adaptações arriscadas.</p>
+                        </div>
+                       
+                        <div class="relative">
+                            <div class="timeline-dot">4</div>
+                            <h4 class="font-bold text-white text-lg">Enviamos orçamento</h4>
+                            <p class="text-sm text-gray-500 mt-1">Proposta clara com prazos de entrega e condições.</p>
+                        </div>
+                       
+                        <div class="relative">
+                            <div class="timeline-dot">5</div>
+                            <h4 class="font-bold text-white text-lg">Suporte até a aplicação</h4>
+                            <p class="text-sm text-gray-500 mt-1">Orientação na instalação para garantir que o sistema volte a operar 100%.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 6: SEGMENTOS -->
+    <section class="py-24 bg-brand-black relative">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="font-heading font-black text-3xl md:text-5xl uppercase tracking-tight mb-12">
+                Onde a força da <span class="text-brand-yellow">SLB atua.</span>
+            </h2>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="px-6 py-3 border border-brand-gray bg-brand-graphite text-brand-white uppercase text-sm font-bold tracking-wider hover:border-brand-yellow transition-colors clip-diagonal">Guindastes</div>
+                <div class="px-6 py-3 border border-brand-gray bg-brand-graphite text-brand-white uppercase text-sm font-bold tracking-wider hover:border-brand-yellow transition-colors clip-diagonal">Munck</div>
+                <div class="px-6 py-3 border border-brand-gray bg-brand-graphite text-brand-white uppercase text-sm font-bold tracking-wider hover:border-brand-yellow transition-colors clip-diagonal">Caminhões</div>
+                <div class="px-6 py-3 border border-brand-gray bg-brand-graphite text-brand-white uppercase text-sm font-bold tracking-wider hover:border-brand-yellow transition-colors clip-diagonal">Transportadoras</div>
+                <div class="px-6 py-3 border border-brand-gray bg-brand-graphite text-brand-white uppercase text-sm font-bold tracking-wider hover:border-brand-yellow transition-colors clip-diagonal">Construção Civil</div>
+                <div class="px-6 py-3 border border-brand-gray bg-brand-graphite text-brand-white uppercase text-sm font-bold tracking-wider hover:border-brand-yellow transition-colors clip-diagonal">Agro</div>
+                <div class="px-6 py-3 border border-brand-gray bg-brand-graphite text-brand-white uppercase text-sm font-bold tracking-wider hover:border-brand-yellow transition-colors clip-diagonal">Indústria</div>
+                <div class="px-6 py-3 border border-brand-gray bg-brand-graphite text-brand-white uppercase text-sm font-bold tracking-wider hover:border-brand-yellow transition-colors clip-diagonal">Oficinas e Implementadores</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 7: PROVA / CASES -->
+    <section class="py-24 bg-white border-y border-gray-200 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-16">
+            <div class="text-center">
+                <h2 class="font-heading font-black text-3xl md:text-5xl uppercase tracking-tight mb-4 text-brand-black">
+                    Soluções aplicadas em <span class="text-gray-400">operações reais.</span>
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Trabalhos executados, equipamentos atendidos e soluções hidráulicas aplicadas em campo.
+                </p>
+            </div>
+        </div>
+
+        <!-- Carrossel / Marquee Infinito -->
+        <div class="relative w-full overflow-hidden">
+            <!-- Efeito de sombra (Fade) nas laterais adaptado para o fundo branco -->
+            <div class="absolute inset-y-0 left-0 w-16 md:w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute inset-y-0 right-0 w-16 md:w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+           
+            <div class="animate-marquee">
+                <!-- ================= CONJUNTO 1 ================= -->
+                <div class="flex gap-6 pr-6">
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-brand-black shrink-0 relative group tech-border clip-diagonal cursor-pointer">
+                        <img src="https://share.gemini.google/weMbFDFvssr1" alt="" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0">
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sm md:text-base font-bold text-brand-yellow uppercase tracking-wide">Manutenção Munck</p>
+                        </div>
+                    </div>
+                   
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-brand-black shrink-0 relative group tech-border clip-diagonal cursor-pointer">
+                        <img src="https://cdn.shopify.com/s/files/1/0732/6734/7567/files/3s.png?v=1785422790" alt="" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0">
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sm md:text-base font-bold text-brand-yellow uppercase tracking-wide">Revisão Bomba</p>
+                        </div>
+                    </div>
+                   
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-brand-black shrink-0 relative group tech-border clip-diagonal cursor-pointer">
+                        <img src="https://cdn.shopify.com/s/files/1/0732/6734/7567/files/497915402_2154546061673319_2825732466836221969_n.jpg?v=1784169932" alt="" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0">
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sm md:text-base font-bold text-brand-yellow uppercase tracking-wide">Suporte em Campo Agro</p>
+                        </div>
+                    </div>
+                   
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-brand-black shrink-0 relative group tech-border clip-diagonal cursor-pointer">
+                        <img src="https://cdn.shopify.com/s/files/1/0732/6734/7567/files/626187964_18309341299255870_2323287394497185914_n.jpg?v=1784169994" alt="" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0">
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sm md:text-base font-bold text-brand-yellow uppercase tracking-wide">Estoque Especializado</p>
+                        </div>
+                    </div>
+                   
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-brand-black shrink-0 relative group tech-border clip-diagonal cursor-pointer">
+                        <img src="https://cdn.shopify.com/s/files/1/0732/6734/7567/files/637168072_18561926704003652_6243232599654714930_n.jpg?v=1784170011" alt="" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0">
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sm md:text-base font-bold text-brand-yellow uppercase tracking-wide">Troca de Cilindro</p>
+                        </div>
+                    </div>
+                   
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-brand-black shrink-0 relative group tech-border clip-diagonal cursor-pointer">
+                        <img src="https://cdn.shopify.com/s/files/1/0732/6734/7567/files/626187964_18309341299255870_2323287394497185914_n.jpg?v=1784169994" alt="" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0">
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sm md:text-base font-bold text-brand-yellow uppercase tracking-wide">Instalação Comando</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ================= CONJUNTO 2 (Clone idêntico para o looping perfeito) ================= -->
+                <div class="flex gap-6 pr-6">
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-brand-black shrink-0 relative group tech-border clip-diagonal cursor-pointer">
+                        <img src="https://cdn.shopify.com/s/files/1/0732/6734/7567/files/unnamed_1.jpg?v=1784169405" alt="Manutenção Munck" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0">
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sm md:text-base font-bold text-brand-yellow uppercase tracking-wide">Manutenção Munck</p>
+                        </div>
+                    </div>
+                   
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-brand-black shrink-0 relative group tech-border clip-diagonal cursor-pointer">
+                        <img src="https://cdn.shopify.com/s/files/1/0732/6734/7567/files/491459086_1732362824060706_2608896896616308159_n.jpg?v=1784169915" alt="Revisão Bomba" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0">
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sm md:text-base font-bold text-brand-yellow uppercase tracking-wide">Revisão Bomba</p>
+                        </div>
+                    </div>
+                   
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-brand-black shrink-0 relative group tech-border clip-diagonal cursor-pointer">
+                        <img src="https://cdn.shopify.com/s/files/1/0732/6734/7567/files/497915402_2154546061673319_2825732466836221969_n.jpg?v=1784169932" alt="Suporte Agro" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0">
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sm md:text-base font-bold text-brand-yellow uppercase tracking-wide">Suporte em Campo Agro</p>
+                        </div>
+                    </div>
+                   
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-brand-black shrink-0 relative group tech-border clip-diagonal cursor-pointer">
+                        <img src="https://cdn.shopify.com/s/files/1/0732/6734/7567/files/626187964_18309341299255870_2323287394497185914_n.jpg?v=1784169994" alt="Estoque Especializado" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0">
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sm md:text-base font-bold text-brand-yellow uppercase tracking-wide">Estoque Especializado</p>
+                        </div>
+                    </div>
+                   
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-brand-black shrink-0 relative group tech-border clip-diagonal cursor-pointer">
+                        <img src="https://cdn.shopify.com/s/files/1/0732/6734/7567/files/637168072_18561926704003652_6243232599654714930_n.jpg?v=1784170011" alt="Troca de Cilindro" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0">
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sm md:text-base font-bold text-brand-yellow uppercase tracking-wide">Troca de Cilindro</p>
+                        </div>
+                    </div>
+                   
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-brand-black shrink-0 relative group tech-border clip-diagonal cursor-pointer">
+                        <img src="https://cdn.shopify.com/s/files/1/0732/6734/7567/files/626187964_18309341299255870_2323287394497185914_n.jpg?v=1784169994" alt="Instalação Comando" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500 grayscale group-hover:grayscale-0">
+                        <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-black via-black/80 to-transparent translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                            <p class="text-sm md:text-base font-bold text-brand-yellow uppercase tracking-wide">Instalação Comando</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 7.5: AUTORIDADE HYVA -->
+    <section class="py-12 bg-[#050505] border-b border-brand-gray relative overflow-hidden flex items-center justify-center">
+        <!-- Brilho de fundo sutil (Ajustado tamanho e posição) -->
+        <div class="absolute top-[65%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[200px] bg-brand-yellow/5 blur-[80px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12 p-8 md:p-12 border border-brand-gray bg-brand-graphite/80 backdrop-blur-md tech-border clip-diagonal">
+               
+                <!-- Selo/Logo -->
+                <div class="flex items-center gap-6 md:w-1/3">
+                    <div class="w-16 h-16 shrink-0 bg-brand-black border border-brand-yellow flex items-center justify-center rounded shadow-[0_0_15px_rgba(255,184,0,0.15)] relative">
+                        <!-- Ponto pulsante de atividade -->
+                        <span class="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-green-500 animate-pulse"></span>
+                       
+                        <!-- Icone de selo/garantia -->
+                        <svg class="w-8 h-8 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-black text-xl md:text-2xl text-white uppercase tracking-tight leading-none">Oficina<br>Autorizada</h3>
+                        <p class="text-brand-yellow font-bold text-sm tracking-widest uppercase mt-2">@hyvadobrasil</p>
+                    </div>
+                </div>
+
+                <!-- Divisor -->
+                <div class="hidden md:block w-px h-20 bg-brand-gray"></div>
+
+                <!-- Copy de Autoridade -->
+                <div class="md:w-2/3">
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed border-l-2 border-brand-yellow pl-5">
+                        A SLB Hidromecânica tem o orgulho de ser <strong class="text-white">representante e oficina autorizada oficial da Hyva</strong>. Isso garante a você acesso direto a peças 100% originais de fábrica, manutenções cobertas por garantia e um corpo técnico treinado sob os mais altos padrões mundiais de elevação e movimentação.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 7.6: TRABALHE CONOSCO (BANNER COMPRIDO) -->
+    <section class="py-12 bg-brand-black border-b border-brand-gray">
+        <div class="max-w-7xl mx-auto px-6">
+            <a href="https://wa.me/554235224313?text=Ol%C3%A1!%20Vi%20o%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20oportunidades%20para%20trabalhar%20com%20a%20SLB." class="wa-trigger block relative w-full rounded-sm overflow-hidden tech-border clip-diagonal bg-brand-graphite group cursor-pointer shadow-[0_0_20px_rgba(255,184,0,0.05)]">
+               
+                <!-- Imagem do Banner -->
+                <img src="https://cdn.shopify.com/s/files/1/0732/6734/7567/files/ChatGPT_Image_30_de_jul._de_2026_11_23_52.png?v=1785421444" alt="Trabalhe com a SLB" class="w-full h-[250px] md:h-[400px] object-cover object-center group-hover:scale-105 transition-transform duration-700">
+               
+                <!-- Overlay sutil de Hover -->
+                <div class="absolute inset-0 bg-brand-black/0 group-hover:bg-brand-black/20 transition-colors duration-500 pointer-events-none"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 8: CTA FINAL -->
+    <section class="py-24 bg-brand-yellow relative overflow-hidden">
+        <!-- Grunge/Industrial overlay texture -->
+        <div class="absolute inset-0 opacity-10 mix-blend-multiply" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+       
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="font-heading font-black text-4xl md:text-6xl uppercase tracking-tight text-brand-black mb-6">
+                Seu equipamento precisa voltar a operar com segurança?
+            </h2>
+            <p class="text-brand-black text-lg md:text-xl font-medium mb-10 max-w-2xl mx-auto">
+                Fale com a equipe da SLB e receba uma orientação técnica precisa para a sua necessidade. Sem achismos, apenas engenharia e experiência.
+            </p>
+            <a href="https://wa.me/554235224313" class="wa-trigger inline-flex items-center gap-3 bg-brand-black text-brand-white font-bold text-xl px-10 py-5 hover:bg-brand-gray transition-colors clip-diagonal-btn">
+                <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Chamar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 9: FAQ -->
+    <section class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="font-heading font-black text-3xl uppercase tracking-tight text-center mb-12 text-brand-black">Perguntas <span class="text-gray-400">Frequentes</span></h2>
+           
+            <div class="space-y-4">
+                <details class="group border border-gray-200 bg-gray-50 cursor-pointer hover:border-brand-yellow transition-colors">
+                    <summary class="flex justify-between items-center font-bold text-brand-black p-6">
+                        A SLB atende guindastes e munck?
+                        <span class="transition group-open:rotate-180 text-brand-yellow">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"/></svg>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 text-sm p-6 pt-0 border-t border-gray-200 mt-2">
+                        Sim, somos especialistas em sistemas hidráulicos para a linha de elevação e movimentação de cargas, fornecendo peças e manutenção para diversas marcas de guindastes e caminhões munck.
+                    </div>
+                </details>
+
+                <details class="group border border-gray-200 bg-gray-50 cursor-pointer hover:border-brand-yellow transition-colors">
+                    <summary class="flex justify-between items-center font-bold text-brand-black p-6">
+                        Vocês vendem peças hidráulicas?
+                        <span class="transition group-open:rotate-180 text-brand-yellow">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"/></svg>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 text-sm p-6 pt-0 border-t border-gray-200 mt-2">
+                        Sim, temos um amplo portfólio que inclui bombas, comandos, válvulas, cilindros, kits de vedação, mangueiras e conexões de alta pressão.
+                    </div>
+                </details>
+
+                <details class="group border border-gray-200 bg-gray-50 cursor-pointer hover:border-brand-yellow transition-colors">
+                    <summary class="flex justify-between items-center font-bold text-brand-black p-6">
+                        Vocês ajudam a identificar a peça correta?
+                        <span class="transition group-open:rotate-180 text-brand-yellow">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"/></svg>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 text-sm p-6 pt-0 border-t border-gray-200 mt-2">
+                        Com certeza. Esse é um dos principais diferenciais. Nossa equipe técnica auxilia na identificação correta da peça com base no modelo do seu equipamento e aplicação, evitando compras erradas.
+                    </div>
+                </details>
+
+                <details class="group border border-gray-200 bg-gray-50 cursor-pointer hover:border-brand-yellow transition-colors">
+                    <summary class="flex justify-between items-center font-bold text-brand-black p-6">
+                        Atendem empresas e oficinas?
+                        <span class="transition group-open:rotate-180 text-brand-yellow">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"/></svg>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 text-sm p-6 pt-0 border-t border-gray-200 mt-2">
+                        Sim, atendemos consumidores finais (donos de caminhão/máquina), construtoras, transportadoras, e temos condições especiais para oficinas mecânicas e implementadores rodoviários.
+                    </div>
+                </details>
+
+                <details class="group border border-gray-200 bg-gray-50 cursor-pointer hover:border-brand-yellow transition-colors">
+                    <summary class="flex justify-between items-center font-bold text-brand-black p-6">
+                        Como solicitar orçamento?
+                        <span class="transition group-open:rotate-180 text-brand-yellow">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"/></svg>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 text-sm p-6 pt-0 border-t border-gray-200 mt-2">
+                        Basta clicar em qualquer botão "Chamar no WhatsApp" neste site. Envie uma foto da peça, placa de identificação ou relate seu problema e nossa equipe responderá prontamente.
+                    </div>
+                </details>
+
+                <details class="group border border-gray-200 bg-gray-50 cursor-pointer hover:border-brand-yellow transition-colors">
+                    <summary class="flex justify-between items-center font-bold text-brand-black p-6">
+                        Vocês fazem manutenção?
+                        <span class="transition group-open:rotate-180 text-brand-yellow">
+                            <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"/></svg>
+                        </span>
+                    </summary>
+                    <div class="text-gray-600 text-sm p-6 pt-0 border-t border-gray-200 mt-2">
+                        Sim, realizamos manutenção, diagnóstico e teste em componentes hidráulicos (bombas, cilindros, comandos) para garantir que voltem à sua eficiência nominal.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 10: RODAPÉ -->
+    <footer class="bg-brand-graphite border-t border-brand-gray pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Info -->
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center mb-6">
+                        <!-- Logo da Empresa Rodapé -->
+                        <img src="https://cdn.shopify.com/s/files/1/0732/6734/7567/files/69580123_641916909631736_3302734644083949568_n_1.jpg?v=1784170828" alt="SLB Hidromecânica" class="h-12 w-auto rounded-sm">
+                    </div>
+                    <p class="text-xs text-gray-500 mb-6">Força, segurança e precisão para operações pesadas que não podem parar.</p>
+                    <div class="flex gap-4">
+                        <a href="https://wa.me/554235224313" class="wa-trigger w-8 h-8 rounded bg-brand-gray flex items-center justify-center text-gray-400 hover:text-green-500 transition-colors" title="WhatsApp">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded bg-brand-gray flex items-center justify-center text-gray-400 hover:text-pink-500 transition-colors" title="Instagram">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm3.98-10.822a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.88z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links Rápidos -->
+                <div>
+                    <h4 class="font-heading font-bold text-white uppercase mb-4 text-sm tracking-wider">Navegação</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#solucoes" class="hover:text-brand-yellow transition-colors">Soluções</a></li>
+                        <li><a href="#produtos" class="hover:text-brand-yellow transition-colors">Produtos</a></li>
+                        <li><a href="#como-trabalhamos" class="hover:text-brand-yellow transition-colors">Como Trabalhamos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Segmentos -->
+                <div>
+                    <h4 class="font-heading font-bold text-white uppercase mb-4 text-sm tracking-wider">Segmentos</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li>Guindastes & Munck</li>
+                        <li>Caminhões & Transportes</li>
+                        <li>Construção Civil & Agro</li>
+                        <li>Indústria & Oficinas</li>
+                    </ul>
+                </div>
+               
+                <!-- Contato -->
+                <div>
+                    <h4 class="font-heading font-bold text-white uppercase mb-4 text-sm tracking-wider">Contato</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li>Suporte Técnico Especializado</li>
+                        <li>Atendimento para todo Brasil</li>
+                        <li class="mt-4"><a href="https://wa.me/554235224313" class="wa-trigger text-brand-yellow font-bold border-b border-brand-yellow/30 hover:border-brand-yellow transition-colors" target="_blank">Fale via WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-brand-gray pt-6 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 uppercase tracking-widest">
+                <p>&copy; 2024 SLB Hidromecânica. Todos os direitos reservados.</p>
+                <p class="mt-2 md:mt-0">Desenvolvido para operações de alta exigência.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DO WHATSAPP DE ROTEAMENTO -->
+    <div id="wa-modal" class="fixed inset-0 z-[9999] hidden flex items-center justify-center bg-black/80 backdrop-blur-sm transition-opacity duration-300 opacity-0">
+        <div id="wa-modal-content" class="bg-brand-graphite tech-border clip-diagonal p-8 max-w-md w-full mx-4 relative transform scale-95 transition-transform duration-300">
+            <!-- Botão Fechar -->
+            <button id="wa-close" class="absolute top-4 right-4 text-gray-400 hover:text-brand-yellow transition-colors" aria-label="Fechar">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <!-- Conteúdo -->
+            <div class="text-center mb-6">
+                <h3 class="font-heading font-black text-2xl uppercase text-white mb-2">Como podemos <span class="text-brand-yellow">ajudar?</span></h3>
+                <p class="text-gray-400 text-sm">Selecione o departamento que você deseja falar para agilizar seu atendimento no WhatsApp.</p>
+            </div>
+
+            <!-- Botões de Opção -->
+            <div class="flex flex-col gap-4">
+                <!-- Botão Vendas -->
+                <a href="https://wa.me/554235224313?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20o%20setor%20de%20Vendas." target="_blank" class="wa-route-btn flex items-center justify-center gap-3 bg-brand-yellow hover:bg-brand-yellowHover text-brand-black font-bold text-lg px-6 py-4 clip-diagonal-btn transition-colors w-full shadow-[0_0_15px_rgba(255,184,0,0.1)]">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    Vendas | Mattheus
+                </a>
+                
+                <!-- Botão Financeiro -->
+                <a href="https://wa.me/5542933001910?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20o%20setor%20Financeiro." target="_blank" class="wa-route-btn flex items-center justify-center gap-3 bg-brand-gray hover:bg-gray-700 text-white font-bold text-lg px-6 py-4 border border-brand-gray clip-diagonal-btn transition-colors w-full">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    Faturamento / Financeiro | Josiane
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+            
+            // --- LÓGICA DO STICKY HEADER ---
+            const mainHeader = document.getElementById('main-header');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    // Quando a página é rolada para baixo
+                    mainHeader.classList.add('bg-white/95', 'backdrop-blur-sm', 'shadow-sm', 'py-4');
+                    mainHeader.classList.remove('bg-transparent', 'pt-4', 'md:pt-8', 'pb-4');
+                } else {
+                    // Quando está no topo da página
+                    mainHeader.classList.remove('bg-white/95', 'backdrop-blur-sm', 'shadow-sm', 'py-4');
+                    mainHeader.classList.add('bg-transparent', 'pt-4', 'md:pt-8', 'pb-4');
+                }
+            });
+
+            // --- LÓGICA DE ANIMAÇÕES GSAP ---
+            gsap.from(".group", {
+                scrollTrigger: {
+                    trigger: ".grid-cols-1.md\\:grid-cols-3",
+                    start: "top 80%",
+                },
+                y: 30,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.1,
+                ease: "power2.out"
+            });
+
+            // --- LÓGICA DO MODAL WHATSAPP ---
+            // Seleciona todos os links que direcionam para wa.me, mas que não pertencem à rota final dentro do pop-up
+            const waTriggers = document.querySelectorAll('a[href*="wa.me"]:not(.wa-route-btn)');
+            const waModal = document.getElementById('wa-modal');
+            const waModalContent = document.getElementById('wa-modal-content');
+            const waCloseBtn = document.getElementById('wa-close');
+            const waRouteBtns = document.querySelectorAll('.wa-route-btn');
+
+            // Função para abrir o Modal
+            const openModal = (e) => {
+                e.preventDefault(); // Impede de abrir o link imediatamente
+                waModal.classList.remove('hidden');
+                
+                // Pequeno delay para a animação do Tailwind funcionar após remover o 'hidden'
+                setTimeout(() => {
+                    waModal.classList.remove('opacity-0');
+                    waModalContent.classList.remove('scale-95');
+                    waModalContent.classList.add('scale-100');
+                }, 10);
+            };
+
+            // Função para fechar o Modal
+            const closeModal = () => {
+                waModal.classList.add('opacity-0');
+                waModalContent.classList.remove('scale-100');
+                waModalContent.classList.add('scale-95');
+                
+                // Aguarda a transição terminar antes de colocar 'hidden'
+                setTimeout(() => {
+                    waModal.classList.add('hidden');
+                }, 300);
+            };
+
+            // Aplica o evento de clique a todos os gatilhos originais do site
+            waTriggers.forEach(trigger => {
+                trigger.addEventListener('click', openModal);
+            });
+
+            // Fechar no X
+            waCloseBtn.addEventListener('click', closeModal);
+
+            // Fechar ao clicar fora do conteúdo (no overlay)
+            waModal.addEventListener('click', (e) => {
+                if (e.target === waModal) {
+                    closeModal();
+                }
+            });
+
+            // Fechar a janela modal assim que um dos botões do WhatsApp for clicado
+            waRouteBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    closeModal();
+                });
+            });
         });
-
-    });
-</script>
+    </script>
+</body>
+</html>
