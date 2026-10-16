@@ -217,12 +217,12 @@
             mask-image: linear-gradient(to top, #000, transparent 73%);
         }
         #slb-intro .slb-3d-scene { position: relative; width: min(96vw, 1080px); height: min(78svh, 720px); min-height: 350px; perspective: 1100px; transform-style: preserve-3d; }
-        #slb-intro .slb-3d-stage { position: absolute; inset: 2% 1% 10%; transform-style: preserve-3d; animation: slb-stage-arrive 3.1s cubic-bezier(.18,.8,.22,1) both; }
+        #slb-intro .slb-3d-stage { position: absolute; inset: 0% 1% 23%; transform-style: preserve-3d; animation: slb-stage-arrive 3.1s cubic-bezier(.18,.8,.22,1) both; }
         #slb-intro .slb-3d-halo { position: absolute; width: 65%; aspect-ratio: 1; left: 21%; top: 6%; border-radius: 50%; background: radial-gradient(circle, rgba(255,184,0,.22), rgba(255,184,0,.06) 48%, transparent 69%); filter: blur(24px); transform: translateZ(-130px); }
-        #slb-intro .slb-3d-orbit { position: absolute; width: 55%; aspect-ratio: 1; left: 25%; top: 7%; border: 1px solid rgba(255,184,0,.28); border-radius: 50%; transform: rotateX(67deg) rotateZ(-18deg) translateZ(-70px); box-shadow: 0 0 28px rgba(255,184,0,.07); animation: slb-orbit 3s ease-in-out both; }
+        #slb-intro .slb-3d-orbit { display: none; }
         #slb-intro .slb-3d-shadow { position: absolute; width: 68%; height: 12%; left: 20%; bottom: 3%; border-radius: 50%; background: #000; filter: blur(24px); opacity: .85; transform: translateZ(-70px) rotateX(70deg); }
         #slb-intro .slb-3d-machine { position: absolute; left: 1%; top: -4%; width: 98%; height: 100%; object-fit: contain; transform-origin: 56% 60%; backface-visibility: hidden; filter: drop-shadow(0 26px 22px rgba(0,0,0,.8)) drop-shadow(0 0 25px rgba(255,184,0,.12)); animation: slb-excavator-3d 3.1s cubic-bezier(.2,.72,.2,1) both; }
-        #slb-intro .slb-3d-brand { position: absolute; bottom: 2%; left: 0; right: 0; text-align: center; z-index: 3; animation: slb-brand-appear 2.8s ease both; }
+        #slb-intro .slb-3d-brand { position: absolute; bottom: 0%; left: 0; right: 0; text-align: center; z-index: 10; animation: slb-brand-appear 2.8s ease both; }
         #slb-intro .slb-3d-brand strong { display: block; font: 900 clamp(29px,5vw,55px)/1 Montserrat,sans-serif; letter-spacing: .12em; color: #fff; }
         #slb-intro .slb-3d-brand span { display: block; margin-top: 9px; color: #ffb800; font: 700 clamp(10px,1.4vw,15px)/1.4 Montserrat,sans-serif; letter-spacing: .25em; }
         #slb-intro .slb-3d-progress { position: absolute; height: 2px; width: min(180px,45vw); left: 50%; bottom: -19px; transform: translateX(-50%); background: #333; overflow: hidden; }
@@ -240,7 +240,7 @@
         @keyframes slb-progress-run { from { transform: scaleX(0); } to { transform: scaleX(1); } }
         @media (max-width: 600px) {
             #slb-intro .slb-3d-scene { width: 100vw; height: min(72svh,650px); min-height: 360px; }
-            #slb-intro .slb-3d-stage { inset: 9% -10% 14%; }
+            #slb-intro .slb-3d-stage { inset: 2% -10% 28%; }
             #slb-intro .slb-3d-machine { width: 100%; left: 0; }
             #slb-intro .slb-3d-brand { bottom: 0; }
         }
@@ -249,6 +249,21 @@
             #slb-intro .slb-3d-machine { transform: none; }
             #slb-intro .slb-3d-progress::after { animation-duration: .1s; }
         }
+
+        /* SLB: popup de boas-vindas isolado, sem alterar as secoes existentes */
+        #slb-welcome { position: fixed; inset: 0; z-index: 9950; display: grid; place-items: center; padding: 20px; background: rgba(0,0,0,.78); backdrop-filter: blur(5px); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .35s ease, visibility .35s ease; }
+        #slb-welcome.slb-welcome-visible { opacity: 1; visibility: visible; pointer-events: auto; }
+        #slb-welcome .slb-welcome-card { position: relative; width: min(100%, 420px); border: 1px solid rgba(255,184,0,.45); background: linear-gradient(145deg,#1d1d1d,#0a0a0a); padding: 34px 28px 30px; color: #f4f4f5; text-align: center; box-shadow: 0 22px 85px rgba(0,0,0,.65); transform: translateY(15px) scale(.97); transition: transform .35s ease; }
+        #slb-welcome.slb-welcome-visible .slb-welcome-card { transform: translateY(0) scale(1); }
+        #slb-welcome .slb-welcome-close { position: absolute; top: 10px; right: 13px; color: #b6b6b6; border: 0; background: transparent; font-size: 26px; cursor: pointer; line-height: 1; }
+        #slb-welcome .slb-welcome-close:hover { color: #ffb800; }
+        #slb-welcome .slb-welcome-tag { color: #ffb800; letter-spacing: .22em; text-transform: uppercase; font: 700 11px Inter,sans-serif; }
+        #slb-welcome .slb-welcome-title { margin: 14px 0 10px; font: 900 clamp(25px,7vw,32px)/1.16 Montserrat,sans-serif; text-transform: uppercase; }
+        #slb-welcome .slb-welcome-title span { color: #ffb800; }
+        #slb-welcome .slb-welcome-desc { color: #c5c5c5; line-height: 1.7; font: 400 15px Inter,sans-serif; margin: 0 0 26px; }
+        #slb-welcome .slb-welcome-cta { display: inline-flex; align-items: center; justify-content: center; width: 100%; gap: 10px; padding: 15px 18px; background: #ffb800; color: #0a0a0a; text-decoration: none; text-transform: uppercase; font: 800 13px Montserrat,sans-serif; letter-spacing: .03em; transition: background .2s ease; }
+        #slb-welcome .slb-welcome-cta:hover { background: #e6a600; }
+        @media (prefers-reduced-motion: reduce) { #slb-welcome, #slb-welcome .slb-welcome-card { transition: none; } }
     </style>
 </head>
 <body class="bg-grid-pattern antialiased selection:bg-brand-yellow selection:text-brand-black relative">
@@ -1096,6 +1111,58 @@
             else window.addEventListener('load', dismiss, { once: true });
             window.setTimeout(dismiss, 3900);
         })();
+    </script>
+
+    <!-- SLB: popup de boas-vindas (somente visitas alternadas) -->
+    <div id="slb-welcome" role="dialog" aria-modal="true" aria-labelledby="slb-welcome-title" aria-describedby="slb-welcome-desc" aria-hidden="true">
+        <div class="slb-welcome-card">
+            <button type="button" class="slb-welcome-close" id="slb-welcome-close" aria-label="Fechar aviso">&times;</button>
+            <div class="slb-welcome-tag">SLB HIDROMECÂNICA</div>
+            <h2 class="slb-welcome-title" id="slb-welcome-title">Seja <span>bem-vindo!</span></h2>
+            <p class="slb-welcome-desc" id="slb-welcome-desc">Precisa de ajuda com peças ou soluções hidráulicas? Nossa equipe está pronta para ajudar você.</p>
+            <a class="slb-welcome-cta wa-trigger" href="https://wa.me/554235224313" id="slb-welcome-contact">Entre em contato pelo WhatsApp ↗</a>
+        </div>
+    </div>
+
+    <!-- SLB: exibir 10 segundos apos entrada, apenas a cada duas visitas -->
+    <script>
+    (function () {
+        var overlay = document.getElementById('slb-welcome');
+        var close = document.getElementById('slb-welcome-close');
+        var contact = document.getElementById('slb-welcome-contact');
+        if (!overlay || !close || !contact) return;
+        var shouldShow = true;
+        try {
+            // Uma nova visita e contada uma vez por aba/sessao, nao por atualizacao.
+            if (sessionStorage.getItem('slb_welcome_session_seen') === '1') return;
+            sessionStorage.setItem('slb_welcome_session_seen', '1');
+            var visits = Number(localStorage.getItem('slb_welcome_visit_count') || '0') + 1;
+            localStorage.setItem('slb_welcome_visit_count', String(visits));
+            shouldShow = (visits % 2 === 1);
+        } catch (err) {
+            // Navegador sem armazenamento: exibir normalmente sem impedir o site.
+        }
+        if (!shouldShow) return;
+        var timer;
+        function hide() {
+            overlay.classList.remove('slb-welcome-visible');
+            overlay.setAttribute('aria-hidden', 'true');
+        }
+        close.addEventListener('click', hide);
+        overlay.addEventListener('click', function (event) { if (event.target === overlay) hide(); });
+        contact.addEventListener('click', hide);
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && overlay.classList.contains('slb-welcome-visible')) hide();
+        });
+        function schedule() {
+            timer = window.setTimeout(function () {
+                overlay.classList.add('slb-welcome-visible');
+                overlay.setAttribute('aria-hidden', 'false');
+            }, 10000);
+        }
+        if (document.readyState === 'complete') schedule();
+        else window.addEventListener('load', schedule, { once: true });
+    })();
     </script>
 </body>
 </html>
